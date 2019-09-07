@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -20,7 +21,7 @@ public class EmployeeDetails {
 	private Long id;
 	
 	@Column(name="house_no")
-	private String houseNo;
+	private String houseNo ;
 	
 	@Column(name="street")
 	private String street;
@@ -36,6 +37,7 @@ public class EmployeeDetails {
 
 	@OneToOne
 	@PrimaryKeyJoinColumn
+    @JoinColumn(name = "employee_id")
 	private Employee employee;
 
 	public Long getId() {
